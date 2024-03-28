@@ -1,0 +1,96 @@
+module.exports = {
+  "GET /declare-manage/manage/qualification/listApply": async (ctx, next) => {
+    ctx.response.type = "application/json";
+    ctx.response.body = {
+      ecode: "1000",
+      data: {
+        endRow: 0,
+        hasNextPage: true,
+        hasPreviousPage: true,
+        isFirstPage: true,
+        isLastPage: true,
+        list: [
+          {
+            // "applyId": Random.guid(),
+            auditStatus: 1,
+            auditUserId: 0,
+            auditUserName: "",
+            companyId: 0,
+            createTime: "",
+            epAddressId: 0,
+            epAddressInfo: "半天达到203",
+            epAddressName: "深圳市龙岗区坂田华为基地",
+            epContactPerson: "李易峰",
+            epContactPersonTel: "118888888888",
+            epEmployeeCount: 100000,
+            epName: "华为",
+            epUscc: "",
+            // "orderNo": Random.guid(),
+            updateTime: "2021-03-12 11:50: 50",
+          },
+        ],
+        navigateFirstPage: 0,
+        navigateLastPage: 0,
+        navigatePages: 0,
+        navigatepageNums: [],
+        nextPage: 0,
+        pageNum: 1,
+        pageSize: 0,
+        pages: 0,
+        prePage: 0,
+        size: 10,
+        startRow: 0,
+        total: 18,
+      },
+      msg: "ok",
+    };
+  },
+  "POST /declare-manage/inoculateBill/listBillUserPage": async (ctx, next) => {
+    let size = ctx.request.query.numPerPage || 10;
+    let curIndex = ctx.request.query.pageNum || 1;
+    ctx.response.type = "application/json";
+    ctx.response.body = {
+      ecode: "1000",
+      data: {
+        endRow: 0,
+        hasNextPage: true,
+        hasPreviousPage: true,
+        isFirstPage: true,
+        isLastPage: true,
+        list: [
+          {
+            applyId: Random.guid(),
+            auditStatus: 1,
+            auditUserId: 0,
+            auditUserName: "",
+            companyId: 0,
+            createTime: "",
+            epAddressId: 0,
+            epAddressInfo: "半天达到203",
+            epAddressName: "深圳市龙岗区坂田华为基地",
+            epContactPerson: "李易峰",
+            epContactPersonTel: "118888888888",
+            epEmployeeCount: 100000,
+            epName: "华为",
+            epUscc: "",
+            orderNo: Random.guid(),
+            updateTime: "2021-03-12 11:50: 50",
+          },
+        ],
+        navigateFirstPage: 0,
+        navigateLastPage: 0,
+        navigatePages: 0,
+        navigatepageNums: [],
+        nextPage: 0,
+        pageNum: 1,
+        pageSize: 0,
+        pages: 0,
+        prePage: 0,
+        size: 10,
+        startRow: 0,
+        total: 18,
+      },
+      msg: "ok",
+    };
+  },
+};
