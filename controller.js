@@ -14,7 +14,6 @@ function addControllers(router, dir) {
 
 function addMapping(router, file) {
   for (const url in file) {
-    console.log(url);
     if (url.startsWith("GET")) {
       const path = url.substring(4);
       router.get(path, file[url]);
@@ -31,6 +30,5 @@ module.exports = function (dir) {
   const controllers_dir = dir || "controllers";
   const router = require("koa-router")();
   addControllers(router, controllers_dir);
-  // console.log(router);
   return router.routes();
 };
